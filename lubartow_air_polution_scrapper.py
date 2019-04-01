@@ -39,8 +39,7 @@ def air_scrapper():
 	out_name = ('C:/Users/Paul/Desktop/python/datasets/Lubartow_air' + now + '.csv')
 	
 	return df.to_csv(out_name,index=False)
-	
-air_scrapper()
+
 
 try:
 	air_scrapper()
