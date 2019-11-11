@@ -5,18 +5,20 @@ import folium
 import pandas as pd
 from geopy.geocoders import Nominatim
 from folium.plugins import MarkerCluster
-import webbrowser
 
-df = pd.read_csv(r'C:\Users\Paul\Desktop\python\datasets\Lubartow_air.csv')
+df = pd.read_csv(air_scrapper())
 
 geolocator = Nominatim(user_agent="specify_your_app_name_here")
 addr = []
 for i in range(len(df)):
-    addr.append(geolocator.geocode(df['loc'][i]))
+	addr.append(geolocator.geocode(df['loc'][i]))
 
 addr_loc = []
 for i in addr:
-    addr_loc.append(i[-1])
+	try:
+		addr_loc.append(i[-1])
+	except:
+		continue
 
 df_loc = pd.DataFrame(addr_loc,columns=['latitude','longitude'])
 
@@ -40,7 +42,6 @@ for i in range(len(addr_loc)):
         fill=True
     ).add_to(marker_cluster)
 
-filepath = 'C:/Users/Paul/Desktop/maps.html'
+filepath = r'C:\Users\Paul\Desktop\gs\air_map_Lubartow\index.html'
 
 m.save(filepath)
-webbrowser.open('file://' + filepath)

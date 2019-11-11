@@ -36,13 +36,14 @@ def air_scrapper():
 	df = pd.DataFrame(ln, columns=['timestamp','loc','status','PM2_5','PM10'])
 
 	now = now.replace(':','')
-	out_name = ('C:/Users/Paul/Desktop/gs/datasets/Lubartow_air' + now + '.csv')
+	now = now.replace(' ','_')
+	out_name = (r'C:\Users\Paul\Desktop\gs\air_map_Lubartow\data\data_' + now + '.csv')
+	df.to_csv(out_name,index=False)
+	
+	return out_name
 
-	return df.to_csv(out_name,index=False)
-
-air_scrapper()
-# try:
-# 	air_scrapper()
-# 	print("You scrapped air polution data succesfully!")
-# except:
-# 	print("Your script has falied :( !")
+try:
+	air_scrapper()
+	print("You scrapped air polution data succesfully!")
+except:
+ 	print("Your script has falied :( !")
