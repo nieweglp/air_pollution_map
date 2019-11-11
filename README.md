@@ -11,5 +11,5 @@ Or using conda
 ```
 conda install -c conda-forge folium 
 ```
-*Lubartow_air.csv* contains example dataset of air polution from one day.
+*Lubartow_air.csv* contains example dataset of air polution from one day.  
 Result of this project you can see on this webpage [Lubartow air pollution map!](https://nieweglp.github.io/air_pollution_map/)
