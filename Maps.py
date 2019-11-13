@@ -5,6 +5,7 @@ import folium
 import pandas as pd
 from geopy.geocoders import Nominatim
 from folium.plugins import MarkerCluster
+from lubartow_air_polution_scrapper import air_scrapper
 
 df = pd.read_csv(air_scrapper())
 
