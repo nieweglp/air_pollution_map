@@ -9,6 +9,9 @@ from lubartow_air_polution_scrapper import air_scrapper
 
 df = pd.read_csv(air_scrapper())
 
+df = df[~(pd.isna(df.status))]
+df.reset_index(inplace=True)
+
 geolocator = Nominatim(user_agent="specify_your_app_name_here")
 addr = []
 for i in range(len(df)):
