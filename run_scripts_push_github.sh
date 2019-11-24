@@ -1,4 +1,4 @@
-cd C:/Users/Paul/Desktop/gs/air_map_lubartow
+
 echo `pwd`
 echo `date`
 
