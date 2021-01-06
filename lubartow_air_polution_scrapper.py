@@ -16,12 +16,12 @@ def air_scrapper():
 	url = 'https://lubartow24.pl/'
 	soup = BeautifulSoup(requests.get(url).text)
 
-	soup.find_all('div',class_='panel')[-6:]
+	#soup.find_all('div',class_='panel')[-5:]
 
 	now = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
 	l = []
-	for element in soup.find_all('div',class_='panel')[-6:]:
+	for element in soup.find_all('div',class_='panel')[-5:]:
 		l.append(now + '\n' +
 		    element.get_text().strip().replace(' · ','\n'))
 

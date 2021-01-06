@@ -17,14 +17,16 @@ df.reset_index(inplace=True)
 geolocator = Nominatim()
 addr = []
 for i in range(len(df)):
-	addr.append(geolocator.geocode(df['loc'][i]))
-
+	try:
+		addr.append(geolocator.geocode(df['loc'][i]))
+	except:
+		addr.append
 addr_loc = []
 for i in addr:
 	try:
 		addr_loc.append(i[-1])
 	except:
-		continue
+		addr_loc.append[(0,0)]
 
 df_loc = pd.DataFrame(addr_loc,columns=['latitude','longitude'])
 
@@ -55,7 +57,7 @@ legend.index = [0,1,3,5,7,10,16]
 m.add_child(legend)
 
 for i in range(len(addr_loc)):
-    info = 'Status: ' + df.iloc[i]['status'] +'<br>PM 2.5: '+ str(df.iloc[i]['PM2_5']) + '<br>PM 10: '+ str(df.iloc[i]['PM10'])
+    info = 'Status: ' + df.iloc[i]['status'] +'<br>PM 2.5 [µg/m3]: '+ str(df.iloc[i]['PM2_5']) + '<br>PM 10 [µg/m3]: '+ str(df.iloc[i]['PM10'])
    
     marker_cluster = MarkerCluster().add_to(m)
     
