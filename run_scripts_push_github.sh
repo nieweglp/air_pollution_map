@@ -1,8 +1,7 @@
-
 echo `pwd`
 echo `date`
 
-python Maps.py
+python maps.py
 
 git add .
 git commit -m "Change made in `date`" 

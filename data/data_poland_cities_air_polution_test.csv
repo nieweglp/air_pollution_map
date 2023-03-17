@@ -1,0 +1,8 @@
+timestamp,loc,status,PM2_5,PM10
+2019-11-11 22:40:18,Poznań,Umiarkowany,49,64
+2019-11-11 22:40:18,Białystok,Zły,95,116
+2019-11-11 22:40:18,Lublin,Zły,100,111
+2019-11-11 22:40:18,Kraków,Bardzo zły,139,166
+2019-11-11 22:40:18,Szczecin,Dostateczny,74,84
+2019-11-11 22:40:18,Wrocław,Dostateczny,75,85
+2019-11-11 22:40:18,Bydgoszcz,Dostateczny,75,85
